@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13281351962BE7300DDF97D /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A13281341962BE7300DDF97D /* HeadingFragment.m */; };
+		A13281381962C7B500DDF97D /* BoldFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A13281371962C7B500DDF97D /* BoldFragment.m */; };
+		A132813E1962D1BF00DDF97D /* ItalicFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A132813D1962D1BF00DDF97D /* ItalicFragment.m */; };
 		A14C439619617A6900A4365D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14C439519617A6900A4365D /* Foundation.framework */; };
 		A14C439919617A6900A4365D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C439819617A6900A4365D /* main.m */; };
 		A14C439D19617A6900A4365D /* MicroDown.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A14C439C19617A6900A4365D /* MicroDown.1 */; };
+		A14C43A519617A9300A4365D /* TextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C43A419617A9300A4365D /* TextFragment.m */; };
+		A14C43A819617ECC00A4365D /* MailFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C43A719617ECC00A4365D /* MailFragment.m */; };
+		A1AFCA0C1961A3CF005753D8 /* LinkFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AFCA0B1961A3CF005753D8 /* LinkFragment.m */; };
+		A1AFCA0F1961A4B3005753D8 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AFCA0E1961A4B3005753D8 /* BlankLineFragment.m */; };
+		A1DE516B1962D779002EC980 /* DelFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DE516A1962D779002EC980 /* DelFragment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,11 +34,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A13281331962BE7300DDF97D /* HeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingFragment.h; sourceTree = "<group>"; };
+		A13281341962BE7300DDF97D /* HeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingFragment.m; sourceTree = "<group>"; };
+		A13281361962C7B500DDF97D /* BoldFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoldFragment.h; sourceTree = "<group>"; };
+		A13281371962C7B500DDF97D /* BoldFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoldFragment.m; sourceTree = "<group>"; };
+		A132813C1962D1BF00DDF97D /* ItalicFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItalicFragment.h; sourceTree = "<group>"; };
+		A132813D1962D1BF00DDF97D /* ItalicFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItalicFragment.m; sourceTree = "<group>"; };
 		A14C439219617A6900A4365D /* MicroDown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MicroDown; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14C439519617A6900A4365D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A14C439819617A6900A4365D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A14C439B19617A6900A4365D /* MicroDown-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MicroDown-Prefix.pch"; sourceTree = "<group>"; };
 		A14C439C19617A6900A4365D /* MicroDown.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MicroDown.1; sourceTree = "<group>"; };
+		A14C43A319617A9300A4365D /* TextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFragment.h; sourceTree = "<group>"; };
+		A14C43A419617A9300A4365D /* TextFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFragment.m; sourceTree = "<group>"; };
+		A14C43A619617ECC00A4365D /* MailFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailFragment.h; sourceTree = "<group>"; };
+		A14C43A719617ECC00A4365D /* MailFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailFragment.m; sourceTree = "<group>"; };
+		A1AFCA0A1961A3CE005753D8 /* LinkFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkFragment.h; sourceTree = "<group>"; };
+		A1AFCA0B1961A3CF005753D8 /* LinkFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkFragment.m; sourceTree = "<group>"; };
+		A1AFCA0D1961A4B3005753D8 /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
+		A1AFCA0E1961A4B3005753D8 /* BlankLineFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankLineFragment.m; sourceTree = "<group>"; };
+		A1DE51691962D779002EC980 /* DelFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelFragment.h; sourceTree = "<group>"; };
+		A1DE516A1962D779002EC980 /* DelFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelFragment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +69,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A13281321962BDFB00DDF97D /* Fragments */ = {
+			isa = PBXGroup;
+			children = (
+				A14C43A319617A9300A4365D /* TextFragment.h */,
+				A14C43A419617A9300A4365D /* TextFragment.m */,
+				A14C43A619617ECC00A4365D /* MailFragment.h */,
+				A14C43A719617ECC00A4365D /* MailFragment.m */,
+				A1AFCA0A1961A3CE005753D8 /* LinkFragment.h */,
+				A1AFCA0B1961A3CF005753D8 /* LinkFragment.m */,
+				A1AFCA0D1961A4B3005753D8 /* BlankLineFragment.h */,
+				A1AFCA0E1961A4B3005753D8 /* BlankLineFragment.m */,
+				A13281331962BE7300DDF97D /* HeadingFragment.h */,
+				A13281341962BE7300DDF97D /* HeadingFragment.m */,
+				A13281361962C7B500DDF97D /* BoldFragment.h */,
+				A13281371962C7B500DDF97D /* BoldFragment.m */,
+				A132813C1962D1BF00DDF97D /* ItalicFragment.h */,
+				A132813D1962D1BF00DDF97D /* ItalicFragment.m */,
+				A1DE51691962D779002EC980 /* DelFragment.h */,
+				A1DE516A1962D779002EC980 /* DelFragment.m */,
+			);
+			name = Fragments;
+			sourceTree = "<group>";
+		};
 		A14C438919617A6900A4365D = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +120,7 @@
 		A14C439719617A6900A4365D /* MicroDown */ = {
 			isa = PBXGroup;
 			children = (
+				A13281321962BDFB00DDF97D /* Fragments */,
 				A14C439819617A6900A4365D /* main.m */,
 				A14C439C19617A6900A4365D /* MicroDown.1 */,
 				A14C439A19617A6900A4365D /* Supporting Files */,
@@ -139,7 +187,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14C43A819617ECC00A4365D /* MailFragment.m in Sources */,
+				A1DE516B1962D779002EC980 /* DelFragment.m in Sources */,
+				A132813E1962D1BF00DDF97D /* ItalicFragment.m in Sources */,
+				A1AFCA0F1961A4B3005753D8 /* BlankLineFragment.m in Sources */,
+				A14C43A519617A9300A4365D /* TextFragment.m in Sources */,
 				A14C439919617A6900A4365D /* main.m in Sources */,
+				A13281351962BE7300DDF97D /* HeadingFragment.m in Sources */,
+				A1AFCA0C1961A3CF005753D8 /* LinkFragment.m in Sources */,
+				A13281381962C7B500DDF97D /* BoldFragment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +309,7 @@
 				A14C43A219617A6900A4365D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

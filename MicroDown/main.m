@@ -7,44 +7,42 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MailFragment.h"
-#import "LinkFragment.h"
-#import "BlankLineFragment.h"
-#import "BoldFragment.h"
-#import "ItalicFragment.h"
-#import "DelFragment.h"
+#import "Document.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
                 
-        MailFragment *frag = [[MailFragment alloc] initWithContent:@"jaxihe@gmail.com"];
-        [frag toHTML];
+//        MailFragment *frag = [[MailFragment alloc] initWithContent:@"jaxihe@gmail.com"];
+//        [frag toHTML];
+//        
+//        NSLog(@"%@", frag);
+//        
+//        LinkFragment *link = [[LinkFragment alloc] initWithContent:@"http://youtube.com"];
+//        [link toHTML];
+//        
+//        NSLog(@"%@", link);
+//
+//        BlankLineFragment *blank = [[BlankLineFragment alloc] initWithContent:@"\n    "];
+//        [blank toHTML];
+//        NSLog(@"%@", blank);
+//
+//        BoldFragment *bold = [[BoldFragment alloc] initWithContent:@"*abc* * def*"];
+//        [bold toHTML];
+//        NSLog(@"%@", bold);
+//
+//        ItalicFragment *italic = [[ItalicFragment alloc] initWithContent:@"**abcd** **efg hjk**"];
+//        [italic toHTML];
+//        NSLog(@"%@", italic);
+//        
+//        DelFragment *del = [[DelFragment alloc] initWithContent:@"~~abc ~~ ~~ efg~~"];
+//        [del toHTML];
+//        NSLog(@"%@", del);
         
-        NSLog(@"%@", frag);
+        Document *doc = [[Document alloc] initWithContent:@"ABC \n\n\n def\n"];
         
-        LinkFragment *link = [[LinkFragment alloc] initWithContent:@"http://youtube.com"];
-        [link toHTML];
-        
-        NSLog(@"%@", link);
-
-        BlankLineFragment *blank = [[BlankLineFragment alloc] initWithContent:@"\n    "];
-        [blank toHTML];
-        NSLog(@"%@", blank);
-
-        BoldFragment *bold = [[BoldFragment alloc] initWithContent:@"*abc* * def*"];
-        [bold toHTML];
-        NSLog(@"%@", bold);
-
-        ItalicFragment *italic = [[ItalicFragment alloc] initWithContent:@"**abcd** **efg hjk**"];
-        [italic toHTML];
-        NSLog(@"%@", italic);
-        
-        DelFragment *del = [[DelFragment alloc] initWithContent:@"~~abc ~~ ~~ efg~~"];
-        [del toHTML];
-        NSLog(@"%@", del);
-        
+        NSLog(@"%@", doc);
     }
     
     return 0;

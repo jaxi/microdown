@@ -10,7 +10,7 @@
 
 @interface TextFragment : NSObject
 
-@property (copy) NSString *content;
+@property NSString *content;
 
 - (instancetype) initWithContent: (NSString *)content;
 - (void) replaceContextWithPattern: (NSString *)pattern withFormat: (NSString *)format;

@@ -10,6 +10,8 @@
 
 @interface HeadingFragment : TextFragment
 
++(NSString *) pattern;
+
 -(void) toHTML;
 
 @end

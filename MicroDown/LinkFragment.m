@@ -10,13 +10,22 @@
 
 @implementation LinkFragment
 
++(NSString *) pattern
+{
+    static NSString *_pattern = nil;
+    
+    if (_pattern == nil) {
+        _pattern = @"((http|https|ftp)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+)";
+    }
+    
+    return _pattern;
+}
+
 -(void)toHTML
 {
-    NSString *pattern = @"((http|https|ftp)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+)";
-    
     NSString *format = @"<a href=\"%@\" />";
     
-    [self replaceContextWithPattern:pattern withFormat:format];
+    [self replaceContextWithPattern:[self.class pattern] withFormat:format];
 }
 
 @end

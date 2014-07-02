@@ -10,14 +10,24 @@
 
 @implementation HeadingFragment
 
++(NSString *) pattern
+{
+    static NSString *_pattern;
+    
+    if (_pattern == nil) {
+        _pattern = @"\\A#{1,6} *([^\n]+?) *#* *(?:\n+|$)";
+    }
+    
+    return _pattern;
+}
+
 -(void)toHTML
 {
-    NSString *pattern = @"\\A#{1,6} *([^\n]+?) *#* *(?:\n+|$)";
     NSString *format = @"<h%d>%@</h%d>";
     
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:[self.class pattern] options:0 error:&error];
     
     NSArray *arrayOfAllMatches = [regex matchesInString:self.content options:0 range:NSMakeRange(0, [self.content length])];
     

@@ -10,5 +10,8 @@
 
 @interface BoldFragment : TextFragment
 
++(NSString *) pattern;
+
 -(void) toHTML;
+
 @end

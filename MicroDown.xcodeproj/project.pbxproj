@@ -17,6 +17,8 @@
 		A14C43A819617ECC00A4365D /* MailFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C43A719617ECC00A4365D /* MailFragment.m */; };
 		A1AFCA0C1961A3CF005753D8 /* LinkFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AFCA0B1961A3CF005753D8 /* LinkFragment.m */; };
 		A1AFCA0F1961A4B3005753D8 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AFCA0E1961A4B3005753D8 /* BlankLineFragment.m */; };
+		A1BB244B1964120E00E44E20 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BB244A1964120E00E44E20 /* Parser.m */; };
+		A1BB245019642AF600E44E20 /* Fragments.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BB244F19642AF600E44E20 /* Fragments.m */; };
 		A1DE21291962F83100C55C1B /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DE21281962F83100C55C1B /* Document.m */; };
 		A1DE516B1962D779002EC980 /* DelFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DE516A1962D779002EC980 /* DelFragment.m */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,9 @@
 		A1AFCA0B1961A3CF005753D8 /* LinkFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkFragment.m; sourceTree = "<group>"; };
 		A1AFCA0D1961A4B3005753D8 /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
 		A1AFCA0E1961A4B3005753D8 /* BlankLineFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankLineFragment.m; sourceTree = "<group>"; };
+		A1BB24491964120E00E44E20 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		A1BB244A1964120E00E44E20 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		A1BB244F19642AF600E44E20 /* Fragments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fragments.m; sourceTree = "<group>"; };
 		A1DE21241962F78600C55C1B /* Fragments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fragments.h; sourceTree = "<group>"; };
 		A1DE21271962F83100C55C1B /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		A1DE21281962F83100C55C1B /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 				A1DE51691962D779002EC980 /* DelFragment.h */,
 				A1DE516A1962D779002EC980 /* DelFragment.m */,
 				A1DE21241962F78600C55C1B /* Fragments.h */,
+				A1BB244F19642AF600E44E20 /* Fragments.m */,
 			);
 			name = Fragments;
 			sourceTree = "<group>";
@@ -129,6 +135,8 @@
 				A14C439819617A6900A4365D /* main.m */,
 				A1DE21271962F83100C55C1B /* Document.h */,
 				A1DE21281962F83100C55C1B /* Document.m */,
+				A1BB24491964120E00E44E20 /* Parser.h */,
+				A1BB244A1964120E00E44E20 /* Parser.m */,
 				A14C439C19617A6900A4365D /* MicroDown.1 */,
 				A14C439A19617A6900A4365D /* Supporting Files */,
 			);
@@ -194,6 +202,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BB244B1964120E00E44E20 /* Parser.m in Sources */,
+				A1BB245019642AF600E44E20 /* Fragments.m in Sources */,
 				A14C43A819617ECC00A4365D /* MailFragment.m in Sources */,
 				A1DE516B1962D779002EC980 /* DelFragment.m in Sources */,
 				A132813E1962D1BF00DDF97D /* ItalicFragment.m in Sources */,

@@ -11,6 +11,8 @@
 
 @interface MailFragment : TextFragment
 
++ (NSString *) pattern;
+
 - (void) toHTML;
 
 @end

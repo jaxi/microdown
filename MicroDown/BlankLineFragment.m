@@ -10,12 +10,20 @@
 
 @implementation BlankLineFragment
 
++(NSString *)pattern
+{
+    static NSString *_pattern = nil;
+    
+    if (_pattern == nil) {
+        _pattern = @"(\\A\\s*$)";
+    }
+    
+    return _pattern;
+}
 -(void) toHTML
 {
-    NSString *pattern = @"(\\A\\s*$)";
-    
     NSString *format = @"<br />";
     
-    [self replaceContextWithPattern:pattern withFormat:format];
+    [self replaceContextWithPattern:[self.class pattern] withFormat:format];
 }
 @end

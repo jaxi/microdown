@@ -11,6 +11,8 @@
 
 @interface BlankLineFragment : TextFragment
 
++ (NSString *) pattern;
+
 - (void) toHTML;
 
 @end

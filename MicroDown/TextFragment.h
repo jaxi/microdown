@@ -14,4 +14,5 @@
 
 - (instancetype) initWithContent: (NSString *)content;
 - (void) replaceContextWithPattern: (NSString *)pattern withFormat: (NSString *)format;
+
 @end

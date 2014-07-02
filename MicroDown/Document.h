@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "Fragments.h"
+#import "Parser.h"
 
 @interface Document : NSObject
 
 @property NSMutableArray *arrayOfLines;
+@property NSMutableArray *elements;
 
-@property int startLine;
-@property int endLine;
+@property NSInteger startLine;
+@property NSInteger endLine;
+
 
 - (instancetype) initWithContent: (NSString *)content;
 

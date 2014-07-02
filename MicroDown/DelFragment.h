@@ -10,6 +10,8 @@
 
 @interface DelFragment : TextFragment
 
++(NSString *)pattern;
+
 -(void)toHTML;
 
 @end

@@ -10,12 +10,22 @@
 
 @implementation BoldFragment
 
++(NSString *)pattern
+{
+    static NSString *_pattern = nil;
+    
+    if (_pattern == nil) {
+        _pattern = @"\\*([^\n\\ ][^\n]+?[^\n\\ ])\\*";
+    }
+    
+    return  _pattern;
+}
+
 -(void)toHTML
 {
-    NSString *pattern = @"\\*([^\n\\ ][^\n]+?[^\n\\ ])\\*";
     NSString *format = @"<strong>%@</strong>";
     
-    [self replaceContextWithPattern:pattern withFormat:format];
+    [self replaceContextWithPattern:[self.class pattern] withFormat:format];
 }
 
 @end

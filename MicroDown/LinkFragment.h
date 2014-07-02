@@ -11,6 +11,8 @@
 
 @interface LinkFragment :TextFragment
 
++ (NSString *) pattern;
+
 - (void) toHTML;
 
 @end

@@ -10,6 +10,8 @@
 
 @interface ItalicFragment : TextFragment
 
++(NSString *)pattern;
+
 -(void) toHTML;
 
 @end

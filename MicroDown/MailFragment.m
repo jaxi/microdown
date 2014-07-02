@@ -10,11 +10,21 @@
 
 @implementation MailFragment
 
++ (NSString *) pattern
+{
+    static NSString *_pattern = nil;
+    
+    if (_pattern == nil) {
+        _pattern = @"([A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4})";
+    }
+    
+    return _pattern;
+}
+
 - (void) toHTML
 {
-    NSString *pattern = @"([A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4})";
     NSString *format = @"<a href=\"mailto:%@\" target=\"_top\">Send Mail</a>";
     
-    [self replaceContextWithPattern:pattern withFormat:format];
+    [self replaceContextWithPattern:[self.class pattern] withFormat:format];
 }
 @end

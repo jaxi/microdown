@@ -40,9 +40,12 @@ int main(int argc, const char * argv[])
         [del toHTML];
         NSLog(@"%@", del);
         
-        Document *doc = [[Document alloc] initWithContent:@"ABC \n\n\n def\n"];
+        NSLog(@"==========================");
         
-        NSLog(@"%@", doc);
+        Document *doc = [[Document alloc] initWithContent:@"line1\nline2\n\nnew paragraph\n    some space\nsame paragraph\n\nnew p"];
+        
+        [doc parse];
+        // NSLog(@"%@", doc);
     }
     
     return 0;

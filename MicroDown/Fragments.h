@@ -12,6 +12,7 @@
 #import "LinkFragment.h"
 #import "BlankLineFragment.h"
 #import "BoldFragment.h"
+#import "HeadingFragment.h"
 #import "ItalicFragment.h"
 #import "DelFragment.h"
 

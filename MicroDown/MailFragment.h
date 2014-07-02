@@ -13,6 +13,4 @@
 
 + (NSString *) pattern;
 
-- (void) toHTML;
-
 @end

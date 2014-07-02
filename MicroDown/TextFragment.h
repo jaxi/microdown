@@ -13,6 +13,8 @@
 @property NSString *content;
 
 - (instancetype) initWithContent: (NSString *)content;
+- (void) toHTML;
+
 - (void) replaceContextWithPattern: (NSString *)pattern withFormat: (NSString *)format;
 
 @end

@@ -28,7 +28,7 @@
     
     static NSRegularExpression *_linkRegex = nil;
     if (_linkRegex == nil) {
-        _linkRegex = [[NSRegularExpression alloc] initWithPattern:[MailFragment pattern] options:0 error:&error];
+        _linkRegex = [[NSRegularExpression alloc] initWithPattern:[LinkFragment pattern] options:0 error:&error];
     }
     
     return _linkRegex;
@@ -40,7 +40,7 @@
     
     static NSRegularExpression *_blankLineRegex = nil;
     if (_blankLineRegex == nil) {
-        _blankLineRegex = [[NSRegularExpression alloc] initWithPattern:[MailFragment pattern] options:0 error:&error];
+        _blankLineRegex = [[NSRegularExpression alloc] initWithPattern:[BlankLineFragment pattern] options:0 error:&error];
     }
     
     return _blankLineRegex;
@@ -52,7 +52,7 @@
     
     static NSRegularExpression *_headingRegex = nil;
     if (_headingRegex == nil) {
-        _headingRegex = [[NSRegularExpression alloc] initWithPattern:[MailFragment pattern] options:0 error:&error];
+        _headingRegex = [[NSRegularExpression alloc] initWithPattern:[HeadingFragment pattern] options:0 error:&error];
     }
     
     return _headingRegex;
@@ -64,7 +64,7 @@
     
     static NSRegularExpression *_boldRegex = nil;
     if (_boldRegex == nil) {
-        _boldRegex = [[NSRegularExpression alloc] initWithPattern:[MailFragment pattern] options:0 error:&error];
+        _boldRegex = [[NSRegularExpression alloc] initWithPattern:[BoldFragment pattern] options:0 error:&error];
     }
     
     return _boldRegex;
@@ -76,7 +76,7 @@
     
     static NSRegularExpression *_italicRegex = nil;
     if (_italicRegex == nil) {
-        _italicRegex = [[NSRegularExpression alloc] initWithPattern:[MailFragment pattern] options:0 error:&error];
+        _italicRegex = [[NSRegularExpression alloc] initWithPattern:[ItalicFragment pattern] options:0 error:&error];
     }
     
     return _italicRegex;
@@ -88,7 +88,7 @@
     
     static NSRegularExpression *_delRegex = nil;
     if (_delRegex == nil) {
-        _delRegex = [[NSRegularExpression alloc] initWithPattern:[MailFragment pattern] options:0 error:&error];
+        _delRegex = [[NSRegularExpression alloc] initWithPattern:[DelFragment pattern] options:0 error:&error];
     }
     
     return _delRegex;

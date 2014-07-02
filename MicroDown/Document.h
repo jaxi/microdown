@@ -21,4 +21,5 @@
 
 - (instancetype) initWithContent: (NSString *)content;
 
+- (void)parse;
 @end

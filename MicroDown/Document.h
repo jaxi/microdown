@@ -7,19 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Fragments.h"
-#import "Parser.h"
 
 @interface Document : NSObject
 
 @property NSMutableArray *arrayOfLines;
 @property NSMutableArray *elements;
 
+@property BOOL inBlock;
 @property NSInteger startLine;
 @property NSInteger endLine;
 
 
 - (instancetype) initWithContent: (NSString *)content;
 
-- (void)parse;
 @end

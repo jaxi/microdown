@@ -46,4 +46,8 @@
     self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:format, hashtagCount, @"$1", hashtagCount]];
 }
 
+-(void) parse
+{
+    NSLog(@"Hello World");
+}
 @end

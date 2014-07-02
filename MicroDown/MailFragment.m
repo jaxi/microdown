@@ -27,4 +27,9 @@
     
     [self replaceContextWithPattern:[self.class pattern] withFormat:format];
 }
+
+-(void) parse
+{
+    NSLog(@"Hello World");
+}
 @end

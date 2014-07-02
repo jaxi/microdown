@@ -22,6 +22,18 @@
 
 }
 
+- (instancetype) initWithContent:(NSString *)content andDocument:(Document *)document
+{
+    self = [super init];
+    
+    if (self) {
+        self.content = content;
+        self.document = document;
+    }
+    
+    return self;
+}
+
 - (instancetype) initWithContent: (NSString *)content
 {
     self = [super init];
@@ -44,7 +56,12 @@
 
 -(void) toHTML
 {
-    [NSException raise:@"Not implemented Error" format:@""];
+    [NSException raise:@"Not implemented Error" format:@"toHTML method is not implemented"];
+}
+
+-(void) parse
+{
+   [NSException raise:@"Not implemented Error" format:@"parse method is not implemented"];
 }
 
 - (NSString *) description

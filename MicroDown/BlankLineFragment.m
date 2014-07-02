@@ -20,10 +20,18 @@
     
     return _pattern;
 }
+
 -(void) toHTML
 {
     NSString *format = @"<br />";
     
     [self replaceContextWithPattern:[self.class pattern] withFormat:format];
 }
+
+-(void) parse
+{
+    BOOL inblock = NO;
+    
+}
+
 @end

@@ -10,12 +10,12 @@
 
 @implementation Parser
 
-- (instancetype) initWithLines: (NSArray *)lines
+-(instancetype)initWithDocument:(Document *)document
 {
     self = [super init];
     
     if (self) {
-        self.lines = lines;
+        self.document = document;
     }
     
     return self;
@@ -23,7 +23,30 @@
 
 - (void) parse
 {
-    
+    while (_document.startLine <= _document.endLine) {
+        NSInteger currentLine = _document.startLine;
+        NSString *lineOfMD = [_document.arrayOfLines objectAtIndex:currentLine];
+        NSRange rangeOfLine = NSMakeRange(0, [lineOfMD length]);
+
+        NSInteger countOfBlankLineMatch = [[Fragments blankLineRegex] numberOfMatchesInString:lineOfMD options:0 range:rangeOfLine];
+
+        NSLog(@"Line: %ld %@", _document.startLine + 1,lineOfMD);
+
+        if (countOfBlankLineMatch > 0) {
+            ++ _document.startLine;
+
+            BlankLineFragment *frag = [[BlankLineFragment alloc] initWithContent: lineOfMD andDocument:_document];
+
+            [frag parse];
+        }else{
+            ++ _document.startLine;
+        }
+    }
 }
 
+-(NSString *) render
+{
+    NSArray *elements = [self.document elements];
+    return @"";
+}
 @end

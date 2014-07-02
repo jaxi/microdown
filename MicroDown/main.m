@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Document.h"
+#import "Parser.h"
 
 int main(int argc, const char * argv[])
 {
@@ -44,7 +44,8 @@ int main(int argc, const char * argv[])
         
         Document *doc = [[Document alloc] initWithContent:@"line1\nline2\n\nnew paragraph\n    some space\nsame paragraph\n\nnew p"];
         
-        [doc parse];
+        Parser *parser = [[Parser alloc] initWithDocument:doc];
+        [parser parse];
         // NSLog(@"%@", doc);
     }
     

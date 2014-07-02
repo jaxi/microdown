@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Fragments.h"
 
 @interface Parser : NSObject
 
-@property NSArray *lines;
+@property Document *document;
 
-- (instancetype) initWithLines: (NSArray *)lines;
+-(instancetype) initWithDocument: (Document *) document;
+
+-(void) parse;
+-(NSString *) render;
 
 @end

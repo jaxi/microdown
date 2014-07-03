@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TextFragment.h"
+#import "BaseFragment.h"
 
-@interface BlankLineFragment : TextFragment
+@interface BlankLineFragment : BaseFragment
 
 + (NSString *) pattern;
 

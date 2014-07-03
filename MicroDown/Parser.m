@@ -30,7 +30,9 @@
 
         NSInteger countOfBlankLineMatch = [[Fragments blankLineRegex] numberOfMatchesInString:lineOfMD options:0 range:rangeOfLine];
 
-        NSLog(@"Line: %ld %@", _document.startLine + 1,lineOfMD);
+        NSInteger countOfHeadingMatch = [[Fragments headingRegex] numberOfMatchesInString:lineOfMD options:0 range:rangeOfLine];
+        
+        // NSLog(@"Line: %ld %@", _document.startLine + 1,lineOfMD);
 
         if (countOfBlankLineMatch > 0) {
             ++ _document.startLine;
@@ -38,8 +40,15 @@
             BlankLineFragment *frag = [[BlankLineFragment alloc] initWithContent: lineOfMD andDocument:_document];
 
             [frag parse];
-        }else{
+        }else if (countOfHeadingMatch > 0){
             ++ _document.startLine;
+            
+            HeadingFragment *frag = [[HeadingFragment alloc] initWithContent: lineOfMD andDocument:_document];
+            [frag parse];
+        }else {
+            ++ _document.startLine;
+            TextFragment *frag = [[TextFragment alloc] initWithContent:lineOfMD andDocument:_document];
+            [frag parse];
         }
     }
 }

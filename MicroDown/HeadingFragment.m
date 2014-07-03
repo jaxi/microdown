@@ -21,7 +21,7 @@
     return _pattern;
 }
 
--(void)toHTML
+-(NSString *)toHTML
 {
     NSString *format = @"<h%d>%@</h%d>";
     
@@ -32,7 +32,7 @@
     NSArray *arrayOfAllMatches = [regex matchesInString:self.content options:0 range:NSMakeRange(0, [self.content length])];
     
     if ([arrayOfAllMatches count] == 0) {
-        return;
+        return @"";
     }
     
     NSTextCheckingResult *match = [arrayOfAllMatches objectAtIndex:0];
@@ -43,7 +43,7 @@
         ++ hashtagCount;
     }
     
-    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:format, hashtagCount, @"$1", hashtagCount]];
+    return [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:format, hashtagCount, @"$1", hashtagCount]];
 }
 
 -(void) parse

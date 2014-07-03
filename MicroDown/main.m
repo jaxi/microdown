@@ -13,32 +13,12 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-                
-        MailFragment *frag = [[MailFragment alloc] initWithContent:@"jaxihe@gmail.com jaxihe@facebook.com"];
-        [frag toHTML];
-        
-        NSLog(@"%@", frag);
-        
-        LinkFragment *link = [[LinkFragment alloc] initWithContent:@"http://youtube.com"];
-        [link toHTML];
-        
-        NSLog(@"%@", link);
 
         BlankLineFragment *blank = [[BlankLineFragment alloc] initWithContent:@"    \n   \n"];
-        [blank toHTML];
-        NSLog(@"%@", blank);
-
-        BoldFragment *bold = [[BoldFragment alloc] initWithContent:@"*abc* * def*"];
-        [bold toHTML];
-        NSLog(@"%@", bold);
-
-        ItalicFragment *italic = [[ItalicFragment alloc] initWithContent:@"**abcd** **efg hjk**"];
-        [italic toHTML];
-        NSLog(@"%@", italic);
+        NSLog(@"%@", [blank toHTML]);
         
-        DelFragment *del = [[DelFragment alloc] initWithContent:@"~~abc ~~ ~~ efg~~"];
-        [del toHTML];
-        NSLog(@"%@", del);
+        HeadingFragment *heading = [[HeadingFragment alloc] initWithContent:@"## bacdefg"];
+        NSLog(@"%@", [heading toHTML]);
         
         NSLog(@"==========================");
         
@@ -46,7 +26,6 @@ int main(int argc, const char * argv[])
         
         Parser *parser = [[Parser alloc] initWithDocument:doc];
         [parser parse];
-        // NSLog(@"%@", doc);
     }
     
     return 0;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Jingkai He. All rights reserved.
 //
 
-#import "TextFragment.h"
+#import "BaseFragment.h"
 
-@interface HeadingFragment : TextFragment
+@interface HeadingFragment : BaseFragment
 
 +(NSString *) pattern;
 

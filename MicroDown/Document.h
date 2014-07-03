@@ -17,7 +17,6 @@
 @property NSInteger startLine;
 @property NSInteger endLine;
 
-
 - (instancetype) initWithContent: (NSString *)content;
 
 @end

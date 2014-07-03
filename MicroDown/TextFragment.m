@@ -32,6 +32,14 @@ static NSString *delFormat = @"<del>%@</del>";
 
 - (NSString *) toHTML
 {
-    return @"";
+    [self del];
+    
+    return self.content;
 }
+
+- (void) del
+{
+    self.content = [self replaceContextWithPattern:delPattern withFormat:delFormat];
+}
+
 @end

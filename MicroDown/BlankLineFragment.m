@@ -24,8 +24,10 @@
 -(NSString *) toHTML
 {
     NSString *format = @"<br />";
+    self.content  = [self replaceContextWithPattern:[self.class pattern] withFormat:format];
     
-    return [self replaceContextWithPattern:[self.class pattern] withFormat:format];
+    return self.content;
+
 }
 
 -(void) parse

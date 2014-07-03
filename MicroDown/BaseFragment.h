@@ -11,7 +11,7 @@
 
 @interface BaseFragment : NSObject
 
-@property NSString *content;
+@property (copy) NSString *content;
 @property (weak) Document *document;
 
 - (instancetype) initWithContent: (NSString *)content;

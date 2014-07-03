@@ -75,10 +75,10 @@
 				A1AFCA0E1961A4B3005753D8 /* BlankLineFragment.m */,
 				A13281331962BE7300DDF97D /* HeadingFragment.h */,
 				A13281341962BE7300DDF97D /* HeadingFragment.m */,
-				A1DE21241962F78600C55C1B /* Fragments.h */,
-				A1BB244F19642AF600E44E20 /* Fragments.m */,
 				A145070B1965A91A00607D73 /* TextFragment.h */,
 				A145070C1965A91A00607D73 /* TextFragment.m */,
+				A1DE21241962F78600C55C1B /* Fragments.h */,
+				A1BB244F19642AF600E44E20 /* Fragments.m */,
 			);
 			name = Fragments;
 			sourceTree = "<group>";

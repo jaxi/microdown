@@ -16,6 +16,7 @@
 		A1AFCA0F1961A4B3005753D8 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AFCA0E1961A4B3005753D8 /* BlankLineFragment.m */; };
 		A1BB245019642AF600E44E20 /* Fragments.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BB244F19642AF600E44E20 /* Fragments.m */; };
 		A1BB245319645FDC00E44E20 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BB245219645FDC00E44E20 /* Parser.m */; };
+		A1D406291966EED400B215F7 /* LinedHeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D406281966EED400B215F7 /* LinedHeadingFragment.m */; };
 		A1DE21291962F83100C55C1B /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DE21281962F83100C55C1B /* Document.m */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		A1BB244F19642AF600E44E20 /* Fragments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fragments.m; sourceTree = "<group>"; };
 		A1BB245119645FDC00E44E20 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		A1BB245219645FDC00E44E20 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		A1D406271966EED400B215F7 /* LinedHeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinedHeadingFragment.h; sourceTree = "<group>"; };
+		A1D406281966EED400B215F7 /* LinedHeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinedHeadingFragment.m; sourceTree = "<group>"; };
 		A1DE21241962F78600C55C1B /* Fragments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fragments.h; sourceTree = "<group>"; };
 		A1DE21271962F83100C55C1B /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		A1DE21281962F83100C55C1B /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 				A1AFCA0E1961A4B3005753D8 /* BlankLineFragment.m */,
 				A13281331962BE7300DDF97D /* HeadingFragment.h */,
 				A13281341962BE7300DDF97D /* HeadingFragment.m */,
+				A1D406271966EED400B215F7 /* LinedHeadingFragment.h */,
+				A1D406281966EED400B215F7 /* LinedHeadingFragment.m */,
 				A145070B1965A91A00607D73 /* TextFragment.h */,
 				A145070C1965A91A00607D73 /* TextFragment.m */,
 				A1DE21241962F78600C55C1B /* Fragments.h */,
@@ -184,6 +189,7 @@
 			files = (
 				A1BB245019642AF600E44E20 /* Fragments.m in Sources */,
 				A1BB245319645FDC00E44E20 /* Parser.m in Sources */,
+				A1D406291966EED400B215F7 /* LinedHeadingFragment.m in Sources */,
 				A1AFCA0F1961A4B3005753D8 /* BlankLineFragment.m in Sources */,
 				A14C43A519617A9300A4365D /* BaseFragment.m in Sources */,
 				A14C439919617A6900A4365D /* main.m in Sources */,

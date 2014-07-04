@@ -10,7 +10,9 @@
 
 #import "BlankLineFragment.h"
 #import "HeadingFragment.h"
+#import "LinedHeadingFragment.h"
 #import "TextFragment.h"
+
 @interface Fragments : NSObject
 
 +(NSRegularExpression *) blankLineRegex;

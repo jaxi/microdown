@@ -45,6 +45,11 @@
             
             HeadingFragment *frag = [[HeadingFragment alloc] initWithContent: lineOfMD andDocument:_document];
             [frag parse];
+        }else if ([LinedHeadingFragment isHeadingWithLine:lineOfMD andDocument:_document]) {
+            ++ _document.startLine;
+            
+            LinedHeadingFragment *frag = [[LinedHeadingFragment alloc] initWithContent:lineOfMD andDocument:_document];
+            [frag parse];
         }else {
             ++ _document.startLine;
             TextFragment *frag = [[TextFragment alloc] initWithContent:lineOfMD andDocument:_document];

@@ -14,15 +14,17 @@ static NSString *emailFormat = @"<a href=\"mailto:%@\" target=\"_top\">Send Mail
 static NSString *autolinkPattern = @"((http|https|ftp)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+)";
 static NSString *autolinkFormat = @"<a href=\"%@\" />";
 
+static NSString *inlineLinkPattern = @"\\[(.+?)\\]\\s*\\((.+?)\\)";
+static NSString *inlineLinkFormat = @"<a href=\"%@\">%@</a>";
 
-static NSString *linkPattern;
-static NSString *linkFormat;
+static NSString *referenceLinkPattern = @"\\[(.+?)\\]\\s*\\[(.+?)\\]";
+static NSString *referenceLinkFormat = @"<a href=\"%@\">%@</a>";
 
-static NSString *imageInlinePattern = @"\\!\\[(.+?)\\]\\s*\\((.+?)\\)";
-static NSString *imageInlineFormat = @"<image src=\"%@\" alt=\"%@\" />";
+static NSString *inlineImagePattern = @"\\!\\[(.+?)\\]\\s*\\((.+?)\\)";
+static NSString *inlineImageFormat = @"<img src=\"%@\" alt=\"%@\" />";
 
-static NSString *imageReferencePattern = @"\\!\\[(.+?)\\]\\s*\\[(.+?)\\]";
-static NSString *imageReferenceFormat = @"<image src=\"%@\" alt=\"%@\" />";
+static NSString *referenceImagePattern = @"\\!\\[(.+?)\\]\\s*\\[(.+?)\\]";
+static NSString *referenceImageFormat = @"<img src=\"%@\" alt=\"%@\" />";
 
 static NSString *boldPattern = @"\\*([^\n\\ ][^\n]+?[^\n\\ ])\\*";
 static NSString *boldFormat = @"<strong>%@</strong>";
@@ -51,6 +53,10 @@ static NSString *delFormat = @"<del>%@</del>";
 {
     [self convertInlineImage];
     [self convertReferenceImage];
+    
+    [self convertInlineLink];
+    [self convertReferenceLink];
+    
 //    self.content = [self replaceContextWithPattern:delPattern withFormat:delFormat];
 //    self.content = [self replaceContextWithPattern:emailPattern withFormat:emailFormat];
 //    self.content = [self replaceContextWithPattern:autolinkPattern withFormat:autolinkFormat];
@@ -61,18 +67,36 @@ static NSString *delFormat = @"<del>%@</del>";
 {
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:imageInlinePattern options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:inlineImagePattern options:0 error:&error];
     
-    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:imageInlineFormat, @"$2", @"$1"]];
+    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:inlineImageFormat, @"$2", @"$1"]];
 }
 
 - (void) convertReferenceImage
 {
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:imageReferencePattern options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:referenceImagePattern options:0 error:&error];
     
-    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:imageReferenceFormat, @"$2", @"$1"]];
+    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:referenceImageFormat, @"$2", @"$1"]];
+}
+
+- (void) convertInlineLink
+{
+    NSError *error = error;
+    
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:inlineLinkPattern options:0 error:&error];
+    
+    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:inlineLinkFormat, @"$2", @"$1"]];
+}
+
+- (void) convertReferenceLink
+{
+    NSError *error = error;
+    
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:referenceLinkPattern options:0 error:&error];
+    
+    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:referenceLinkFormat, @"$2", @"$1"]];
 }
 
 @end

@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
         HeadingFragment *heading = [[HeadingFragment alloc] initWithContent:@"## bacdefg"];
         NSLog(@"%@", [heading toHTML]);
         
-        TextFragment *text = [[TextFragment alloc] initWithContent:@"![alt text]   [https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png]"];
+        TextFragment *text = [[TextFragment alloc] initWithContent:@"![alt text][https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png]"];
         NSLog(@"%@", [text toHTML]);
         
         NSLog(@"==========================");

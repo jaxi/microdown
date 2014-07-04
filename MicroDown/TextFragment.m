@@ -32,7 +32,7 @@ static NSString *boldFormat = @"<strong>%@</strong>";
 static NSString *italicPattern = @"\\*\\*([^\n\\ ][^\n]+?[^\n\\ ])\\*\\*";
 static NSString *italicFormat = @"<em>%@</em>";
 
-static NSString *delPattern = @"\\*\\*([^\n\\ ][^\n]+?[^\n\\ ])\\*\\*";
+static NSString *delPattern = @"~~([^\n\\ ][^\n]+?[^\n\\ ])~~";
 static NSString *delFormat = @"<del>%@</del>";
 
 @implementation TextFragment

@@ -22,10 +22,11 @@ int main(int argc, const char * argv[])
 //        
 //        TextFragment *text = [[TextFragment alloc] initWithContent:@"![alt text][https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png] <http://baidu.com>"];
 //        NSLog(@"%@", [text toHTML]);
-//        
+//
 //        NSLog(@"==========================");
         
-        Document *doc = [[Document alloc] initWithContent:@"### hello world\nline2\n\nnew paragraph\n    some space\nsame paragraph\n\nnew p"];
+        Document *doc = [[Document alloc] initWithContent:@"### ~~yep~~ [hello world](http://google.com)\
+                         \nline2\n\nnew paragraph\n    some space\n~~yep~~\n\nnew p"];
         
         Parser *parser = [[Parser alloc] initWithDocument:doc];
         [parser parse];

@@ -29,14 +29,18 @@
     
     NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:[self.class pattern] options:0 error:&error];
     
-    self.content = [regex
-                    stringByReplacingMatchesInString:self.content
-                    options:0
-                    range:NSMakeRange(0, [self.content length])
-                    withTemplate:[NSString stringWithFormat:format,
-                                  [@"$1" length],
-                                  [[[TextFragment alloc] initWithContent:@"$2"] toHTML],
-                                  [@"$1" length]]];
+    NSArray *arrayOfAllMatches = [regex matchesInString:self.content options:0 range:NSMakeRange(0, [self.content length])];
+
+    NSTextCheckingResult *match1 = [arrayOfAllMatches objectAtIndex:0];
+    NSString *hashtag = [self.content substringWithRange:[match1 rangeAtIndex:1]];
+    
+    unsigned long hashtagCount = [hashtag length];
+    
+    NSTextCheckingResult *match2 = [arrayOfAllMatches objectAtIndex:0];
+    NSString *headingContent = [self.content substringWithRange:[match2 rangeAtIndex:2]];
+    NSString *renderedHeadingContent = [[[TextFragment alloc] initWithContent:headingContent] toHTML];
+    
+    self.content = [NSString stringWithFormat:format, hashtagCount, renderedHeadingContent, hashtagCount];
     
     return self.content;
 }

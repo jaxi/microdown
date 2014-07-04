@@ -12,6 +12,7 @@
 @interface Parser : NSObject
 
 @property Document *document;
+@property NSString *renderedString;
 
 -(instancetype) initWithDocument: (Document *) document;
 

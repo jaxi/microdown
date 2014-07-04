@@ -55,7 +55,15 @@
 
 -(NSString *) render
 {
-    NSArray *elements = [self.document elements];
-    return @"";
+    if (_renderedString == nil) {
+        NSMutableArray *arrayOfRenderedString = [[NSMutableArray alloc] init];
+        for (TextFragment *element in self.document.elements ) {
+            [arrayOfRenderedString addObject: [element toHTML]];
+        }
+        
+        _renderedString = [arrayOfRenderedString componentsJoinedByString:@"\n"];
+    }
+    
+    return  _renderedString;
 }
 @end

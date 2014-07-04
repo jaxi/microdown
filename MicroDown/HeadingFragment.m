@@ -15,7 +15,7 @@
     static NSString *_pattern;
     
     if (_pattern == nil) {
-        _pattern = @"\\A#{1,6} *([^\n]+?) *#* *(?:\n+|$)";
+        _pattern = @"\\A(#{1,6}) ([^\n]+?) *#* *(?:\n+|$)";
     }
     
     return _pattern;
@@ -29,27 +29,20 @@
     
     NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:[self.class pattern] options:0 error:&error];
     
-    NSArray *arrayOfAllMatches = [regex matchesInString:self.content options:0 range:NSMakeRange(0, [self.content length])];
-    
-    if ([arrayOfAllMatches count] == 0) {
-        return @"";
-    }
-    
-    NSTextCheckingResult *match = [arrayOfAllMatches objectAtIndex:0];
-    NSString *subStringForMatch = [self.content substringWithRange: match.range];
-    
-    int hashtagCount = 0;
-    for (int i = 0; [subStringForMatch characterAtIndex:i] == '#'; ++ i) {
-        ++ hashtagCount;
-    }
-    
-    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:format, hashtagCount, @"$1", hashtagCount]];
+    self.content = [regex
+                    stringByReplacingMatchesInString:self.content
+                    options:0
+                    range:NSMakeRange(0, [self.content length])
+                    withTemplate:[NSString stringWithFormat:format,
+                                  [@"$1" length],
+                                  [[[TextFragment alloc] initWithContent:@"$2"] toHTML],
+                                  [@"$1" length]]];
     
     return self.content;
 }
 
 -(void) parse
 {
-    NSLog(@"Hello World");
+    [self.document.elements addObject:self];
 }
 @end

@@ -57,8 +57,19 @@
             [frag parse];
         }else {
             ++ _document.startLine;
+
             TextFragment *frag = [[TextFragment alloc] initWithContent:lineOfMD andDocument:_document];
-            [frag parse];
+            // [frag parse];
+            BaseFragment *lastElement = [self.document.elements lastObject];
+            
+            if ([lastElement isKindOfClass:[ParagraphFragment class]]) {
+                ParagraphFragment *le = [self.document.elements lastObject];
+                [le addChildren:frag];
+            }else{
+                ParagraphFragment *paragraph = [[ParagraphFragment alloc] initWithContent:@"" andDocument:_document];
+                [paragraph addChildren:frag];
+                [paragraph parse];
+            }
         }
     }
 }
@@ -67,7 +78,7 @@
 {
     if (_renderedString == nil) {
         NSMutableArray *arrayOfRenderedString = [[NSMutableArray alloc] init];
-        for (TextFragment *element in self.document.elements ) {
+        for (BaseFragment *element in self.document.elements ) {
             [arrayOfRenderedString addObject: [element toHTML]];
         }
         

@@ -12,6 +12,7 @@
 #import "HeadingFragment.h"
 #import "LinedHeadingFragment.h"
 #import "HorizontalFragment.h"
+#import "ParagraphFragment.h"
 #import "TextFragment.h"
 
 @interface Fragments : NSObject

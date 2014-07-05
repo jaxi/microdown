@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Jingkai He. All rights reserved.
 //
 
-#import "TextFragment.h"
+#import "ParagraphFragment.h"
 
 @interface LinedHeadingFragment : BaseFragment
 

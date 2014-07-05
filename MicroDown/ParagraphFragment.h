@@ -6,8 +6,13 @@
 //  Copyright (c) 2014 Jingkai He. All rights reserved.
 //
 
-#import "BaseFragment.h"
+#import "TextFragment.h"
 
 @interface ParagraphFragment : BaseFragment
+
+@property NSMutableArray *children;
+
+- (void) addChildren: (TextFragment *)child;
+- (void) removeLastChild;
 
 @end

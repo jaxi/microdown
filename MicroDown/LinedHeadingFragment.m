@@ -42,7 +42,7 @@ static NSString *h2Pattern = @"\\A-{3,}\\s*";
     
     BOOL _isHeading = YES;
     
-    _isHeading = (h1Match || h2Match) && (element != nil) && [element isKindOfClass:[TextFragment class]];
+    _isHeading = (h1Match || h2Match) && (element != nil) && [element isKindOfClass:[ParagraphFragment class]];
     
     return _isHeading;
 }
@@ -52,9 +52,17 @@ static NSString *h2Pattern = @"\\A-{3,}\\s*";
     if (self.parsed == YES) {
         return self.content;
     }
-    BaseFragment *element = self.document.elements.lastObject;
-    [self.document.elements removeLastObject];
+    
+    ParagraphFragment *paragraph = [self.document.elements lastObject];
 
+    TextFragment *element = [paragraph.children lastObject];
+
+    [paragraph removeLastChild];
+    
+    if ([paragraph.children count] == 0) {
+        [self.document.elements removeLastObject];
+    }
+    
     NSError *error1, *error2;
     
     NSRange range = NSMakeRange(0, [self.content length]);

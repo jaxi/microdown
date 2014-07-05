@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A104400B19685A6400575CAB /* HorizontalFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A104400A19685A6400575CAB /* HorizontalFragment.m */; };
 		A104400E19685AD600575CAB /* ParagraphFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A104400D19685AD600575CAB /* ParagraphFragment.m */; };
+		A104401419687DFB00575CAB /* ListFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A104401319687DFB00575CAB /* ListFragment.m */; };
 		A13281351962BE7300DDF97D /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A13281341962BE7300DDF97D /* HeadingFragment.m */; };
 		A145070D1965A91A00607D73 /* TextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A145070C1965A91A00607D73 /* TextFragment.m */; };
 		A14C439619617A6900A4365D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14C439519617A6900A4365D /* Foundation.framework */; };
@@ -40,6 +41,8 @@
 		A104400A19685A6400575CAB /* HorizontalFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalFragment.m; sourceTree = "<group>"; };
 		A104400C19685AD600575CAB /* ParagraphFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParagraphFragment.h; sourceTree = "<group>"; };
 		A104400D19685AD600575CAB /* ParagraphFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParagraphFragment.m; sourceTree = "<group>"; };
+		A104401219687DFB00575CAB /* ListFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFragment.h; sourceTree = "<group>"; };
+		A104401319687DFB00575CAB /* ListFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFragment.m; sourceTree = "<group>"; };
 		A13281331962BE7300DDF97D /* HeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingFragment.h; sourceTree = "<group>"; };
 		A13281341962BE7300DDF97D /* HeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingFragment.m; sourceTree = "<group>"; };
 		A145070B1965A91A00607D73 /* TextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFragment.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				A145070C1965A91A00607D73 /* TextFragment.m */,
 				A1DE21241962F78600C55C1B /* Fragments.h */,
 				A1BB244F19642AF600E44E20 /* Fragments.m */,
+				A104401219687DFB00575CAB /* ListFragment.h */,
+				A104401319687DFB00575CAB /* ListFragment.m */,
 			);
 			name = Fragments;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1BB245019642AF600E44E20 /* Fragments.m in Sources */,
+				A104401419687DFB00575CAB /* ListFragment.m in Sources */,
 				A104400B19685A6400575CAB /* HorizontalFragment.m in Sources */,
 				A104400E19685AD600575CAB /* ParagraphFragment.m in Sources */,
 				A1BB245319645FDC00E44E20 /* Parser.m in Sources */,

@@ -27,9 +27,15 @@ static NSString *pattern = @"\\A[*-=]{3,}\\s*";
 {
     NSError *error;
     
-    NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:pattern options:0 error:&error];
+    NSRegularExpression *regex = [[NSRegularExpression alloc]
+                                  initWithPattern:pattern
+                                  options:0
+                                  error:&error];
 
-    BOOL regexMatch = [regex matchesInString:line options:0 range:NSMakeRange(0, [line length])] > 0;
+    BOOL regexMatch = [regex
+                       matchesInString:line
+                       options:0
+                       range:NSMakeRange(0, [line length])] > 0;
     
     if (!regexMatch) {
         return NO;

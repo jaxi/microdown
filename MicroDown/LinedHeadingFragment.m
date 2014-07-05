@@ -30,9 +30,15 @@ static NSString *h2Pattern = @"\\A-{3,}\\s*";
     
     NSRange range = NSMakeRange(0, [line length]);
     
-    NSRegularExpression *h1Regex = [[NSRegularExpression alloc] initWithPattern:h1Pattern options:0 error:&error1];
+    NSRegularExpression *h1Regex = [[NSRegularExpression alloc]
+                                    initWithPattern:h1Pattern
+                                    options:0
+                                    error:&error1];
     
-    NSRegularExpression *h2Regex = [[NSRegularExpression alloc] initWithPattern:h2Pattern options:0 error:&error2];
+    NSRegularExpression *h2Regex = [[NSRegularExpression alloc]
+                                    initWithPattern:h2Pattern
+                                    options:0
+                                    error:&error2];
     
     BOOL h1Match = [[h1Regex matchesInString:line options:0 range:range] count] > 0;
     BOOL h2Match = [[h2Regex matchesInString:line options:0 range:range] count] > 0;
@@ -42,7 +48,8 @@ static NSString *h2Pattern = @"\\A-{3,}\\s*";
     
     BOOL _isHeading = YES;
     
-    _isHeading = (h1Match || h2Match) && (element != nil) && [element isKindOfClass:[ParagraphFragment class]];
+    _isHeading = (h1Match || h2Match) && (element != nil) &&
+    [element isKindOfClass:[ParagraphFragment class]];
     
     return _isHeading;
 }
@@ -67,9 +74,15 @@ static NSString *h2Pattern = @"\\A-{3,}\\s*";
     
     NSRange range = NSMakeRange(0, [self.content length]);
     
-    NSRegularExpression *h1Regex = [[NSRegularExpression alloc] initWithPattern:h1Pattern options:0 error:&error1];
+    NSRegularExpression *h1Regex = [[NSRegularExpression alloc]
+                                    initWithPattern:h1Pattern
+                                    options:0
+                                    error:&error1];
     
-    NSRegularExpression *h2Regex = [[NSRegularExpression alloc] initWithPattern:h2Pattern options:0 error:&error2];
+    NSRegularExpression *h2Regex = [[NSRegularExpression alloc]
+                                    initWithPattern:h2Pattern
+                                    options:0
+                                    error:&error2];
     
     BOOL h1Match = [[h1Regex matchesInString:self.content options:0 range:range] count] > 0;
     BOOL h2Match = [[h2Regex matchesInString:self.content options:0 range:range] count] > 0;

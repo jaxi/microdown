@@ -14,9 +14,11 @@
 #import "HorizontalFragment.h"
 #import "ParagraphFragment.h"
 #import "TextFragment.h"
+#import "ListFragment.h"
 
 @interface Fragments : NSObject
 
 +(NSRegularExpression *) blankLineRegex;
 +(NSRegularExpression *) headingRegex;
+
 @end

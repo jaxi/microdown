@@ -85,36 +85,63 @@ static NSString *delFormat = @"<del>%@</del>";
 {
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:inlineImagePattern options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression
+                                   regularExpressionWithPattern:inlineImagePattern
+                                   options:0
+                                   error:&error];
     
-    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:inlineImageFormat, @"$2", @"$1"]];
+    self.content = [regex
+                    stringByReplacingMatchesInString:self.content
+                    options:0
+                    range:NSMakeRange(0, [self.content length])
+                    withTemplate:[NSString stringWithFormat:inlineImageFormat, @"$2", @"$1"]];
 }
 
 - (void) convertReferenceImage
 {
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:referenceImagePattern options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression
+                                   regularExpressionWithPattern:referenceImagePattern
+                                   options:0
+                                   error:&error];
     
-    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:referenceImageFormat, @"$2", @"$1"]];
+    self.content = [regex
+                    stringByReplacingMatchesInString:self.content
+                    options:0
+                    range:NSMakeRange(0, [self.content length])
+                    withTemplate:[NSString stringWithFormat:referenceImageFormat, @"$2", @"$1"]];
 }
 
 - (void) convertInlineLink
 {
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:inlineLinkPattern options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression
+                                   regularExpressionWithPattern:inlineLinkPattern
+                                   options:0
+                                   error:&error];
     
-    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:inlineLinkFormat, @"$2", @"$1"]];
+    self.content = [regex
+                    stringByReplacingMatchesInString:self.content
+                    options:0 range:NSMakeRange(0, [self.content length])
+                    withTemplate:[NSString stringWithFormat:inlineLinkFormat, @"$2", @"$1"]];
 }
 
 - (void) convertReferenceLink
 {
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:referenceLinkPattern options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression
+                                   regularExpressionWithPattern:referenceLinkPattern
+                                   options:0
+                                   error:&error];
     
-    self.content = [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:referenceLinkFormat, @"$2", @"$1"]];
+    self.content = [regex
+                    stringByReplacingMatchesInString:self.content
+                    options:0
+                    range:NSMakeRange(0, [self.content length])
+                    withTemplate:[NSString stringWithFormat:referenceLinkFormat, @"$2", @"$1"]];
 }
 
 @end

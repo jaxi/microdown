@@ -31,7 +31,8 @@
         
         NSError *error = error;
         
-        self.arrayOfLines = [NSMutableArray arrayWithArray:[content componentsSeparatedByString:@"\n"]];
+        self.arrayOfLines = [NSMutableArray
+                             arrayWithArray:[content componentsSeparatedByString:@"\n"]];
         
         self.inBlock = NO;
         self.startLine = 0;
@@ -46,7 +47,9 @@
 - (NSString *) description
 {
     NSString *resultArray = [self.arrayOfLines componentsJoinedByString:@"\n"];
-    NSString *result = [NSString stringWithFormat:@"%@\nStartLine: %ld\nEndLine: %ld", resultArray, (long)self.startLine, (long)self.endLine];
+    NSString *result = [NSString stringWithFormat:@"%@\nStartLine: %ld\nEndLine: %ld",
+                        resultArray, (long)self.startLine, (long)self.endLine];
+    
     return result;
 }
 

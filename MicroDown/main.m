@@ -26,7 +26,7 @@ int main(int argc, const char * argv[])
 //        NSLog(@"==========================");
         
         Document *doc = [[Document alloc] initWithContent:@"### ~~yep~~ [hello world](http://google.com)\
-                         \nI am the heading\n===\n\n=====\nnew paragraph\n    some space\n~~yep~~\n   wowowo"];
+                         \nI am the heading\n===\n\n=====\nnew paragraph\n    some space\n~~yep~~\n   wowowo\n1. a\n* b\n* c"];
         
         Parser *parser = [[Parser alloc] initWithDocument:doc];
         [parser parse];

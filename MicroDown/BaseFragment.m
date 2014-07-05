@@ -49,9 +49,16 @@
 {
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression
+                                   regularExpressionWithPattern:pattern
+                                   options:0
+                                   error:&error];
         
-    return [regex stringByReplacingMatchesInString:self.content options:0 range:NSMakeRange(0, [self.content length]) withTemplate:[NSString stringWithFormat:format, @"$1"]];
+    return [regex
+            stringByReplacingMatchesInString:self.content
+            options:0
+            range:NSMakeRange(0, [self.content length])
+            withTemplate:[NSString stringWithFormat:format, @"$1"]];
 }
 
 -(NSString *) toHTML

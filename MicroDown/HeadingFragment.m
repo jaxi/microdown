@@ -27,9 +27,15 @@
     
     NSError *error = error;
     
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:[self.class pattern] options:0 error:&error];
+    NSRegularExpression * regex = [NSRegularExpression
+                                   regularExpressionWithPattern:[self.class pattern]
+                                   options:0
+                                   error:&error];
     
-    NSArray *arrayOfAllMatches = [regex matchesInString:self.content options:0 range:NSMakeRange(0, [self.content length])];
+    NSArray *arrayOfAllMatches = [regex
+                                  matchesInString:self.content
+                                  options:0
+                                  range:NSMakeRange(0, [self.content length])];
 
     NSTextCheckingResult *match1 = [arrayOfAllMatches objectAtIndex:0];
     NSString *hashtag = [self.content substringWithRange:[match1 rangeAtIndex:1]];
@@ -38,9 +44,12 @@
     
     NSTextCheckingResult *match2 = [arrayOfAllMatches objectAtIndex:0];
     NSString *headingContent = [self.content substringWithRange:[match2 rangeAtIndex:2]];
-    NSString *renderedHeadingContent = [[[TextFragment alloc] initWithContent:headingContent] toHTML];
+    NSString *renderedHeadingContent = [[[TextFragment alloc]
+                                         initWithContent:headingContent]
+                                        toHTML];
     
-    self.content = [NSString stringWithFormat:format, hashtagCount, renderedHeadingContent, hashtagCount];
+    self.content = [NSString stringWithFormat:format,
+                    hashtagCount, renderedHeadingContent, hashtagCount];
     
     return self.content;
 }

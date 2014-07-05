@@ -11,6 +11,7 @@
 #import "BlankLineFragment.h"
 #import "HeadingFragment.h"
 #import "LinedHeadingFragment.h"
+#import "HorizontalFragment.h"
 #import "TextFragment.h"
 
 @interface Fragments : NSObject

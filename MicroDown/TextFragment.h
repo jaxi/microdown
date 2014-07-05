@@ -10,4 +10,5 @@
 
 @interface TextFragment : BaseFragment
 
+@property BOOL parsed;
 @end

@@ -37,6 +37,17 @@ static NSString *delFormat = @"<del>%@</del>";
 
 @implementation TextFragment
 
+- (instancetype) init
+{
+    self = [super init];
+    
+    if (self) {
+        self.parsed = NO;
+    }
+    
+    return self;
+}
+
 - (void) parse
 {
     [self.document.elements addObject:self];
@@ -44,6 +55,11 @@ static NSString *delFormat = @"<del>%@</del>";
 
 - (NSString *) toHTML
 {
+    if (self.parsed == YES) {
+        return self.content;
+    }
+
+    self.parsed = YES;
     [self plainConvert];
     
     return self.content;

@@ -32,10 +32,10 @@ static NSString *pattern = @"\\A[*-=]{3,}\\s*";
                                   options:0
                                   error:&error];
 
-    BOOL regexMatch = [regex
+    BOOL regexMatch = [[regex
                        matchesInString:line
                        options:0
-                       range:NSMakeRange(0, [line length])] > 0;
+                       range:NSMakeRange(0, [line length])] count] > 0;
     
     if (!regexMatch) {
         return NO;

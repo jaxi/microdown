@@ -123,4 +123,9 @@
     
     return  _renderedString;
 }
+
+-(void)dealloc
+{
+    NSLog(@"Done");
+}
 @end

@@ -132,11 +132,11 @@
 			isa = PBXGroup;
 			children = (
 				A13281321962BDFB00DDF97D /* Fragments */,
-				A14C439819617A6900A4365D /* main.m */,
 				A1DE21271962F83100C55C1B /* Document.h */,
 				A1DE21281962F83100C55C1B /* Document.m */,
 				A1BB245119645FDC00E44E20 /* Parser.h */,
 				A1BB245219645FDC00E44E20 /* Parser.m */,
+				A14C439819617A6900A4365D /* main.m */,
 				A14C439C19617A6900A4365D /* MicroDown.1 */,
 				A14C439A19617A6900A4365D /* Supporting Files */,
 			);

@@ -113,11 +113,24 @@
 -(NSString *) render
 {
     if (_renderedString == nil) {
-        NSMutableArray *arrayOfRenderedString = [[NSMutableArray alloc] init];
-        for (BaseFragment *element in self.document.elements ) {
-            [arrayOfRenderedString addObject: [element toHTML]];
+        NSInteger elementsCount = self.document.elements.count;
+        
+        NSMutableArray *arrayOfRenderedString = [NSMutableArray arrayWithCapacity:elementsCount];
+        for (int i = 0; i < elementsCount; ++i) {
+            [arrayOfRenderedString addObject:@"Object-1"];
         }
         
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        dispatch_group_t group = dispatch_group_create();
+        
+        for (NSInteger i = 0; i < elementsCount; ++ i) {
+            dispatch_group_async(group, queue, ^{
+                arrayOfRenderedString[i] = [self.document.elements[i] toHTML];
+            });
+        }
+        
+        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+
         _renderedString = [arrayOfRenderedString componentsJoinedByString:@"\n"];
     }
     

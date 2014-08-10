@@ -11,7 +11,6 @@
 
 int main(int argc, const char * argv[])
 {
-
     @autoreleasepool {
         
         NSDate *start = [NSDate date];
@@ -20,7 +19,6 @@ int main(int argc, const char * argv[])
             Parser *parser = [[Parser alloc] initWithDocument:doc];
             [parser parse];
             [parser render];
-            
         }
         NSTimeInterval timeInterval = [start timeIntervalSinceNow];
         double seconds = fabs(timeInterval);

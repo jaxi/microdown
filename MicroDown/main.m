@@ -11,29 +11,20 @@
 
 int main(int argc, const char * argv[])
 {
-
     @autoreleasepool {
-
-//        BlankLineFragment *blank = [[BlankLineFragment alloc] initWithContent:@"    \n   \n"];
-//        NSLog(@"%@", [blank toHTML]);
-//        
-//        HeadingFragment *heading = [[HeadingFragment alloc] initWithContent:@"## bacdefg"];
-//        NSLog(@"%@", [heading toHTML]);
-//        
-//        TextFragment *text = [[TextFragment alloc] initWithContent:@"![alt text][https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png] <http://baidu.com>"];
-//        NSLog(@"%@", [text toHTML]);
-//
-//        NSLog(@"==========================");
         
-//        Document *doc = [[Document alloc] initWithContent:@"### ~~yep~~ [hello world](http://google.com)\
-//                         \nI am the heading\n===\n\n=====\nnew paragraph\n    some space\n~~yep~~\n   wowowo\n1. a\n* b\n* c"];
-
-        Document *doc = [[Document alloc] initWithContent:@"Hello World\n\nefgh\n\n1. *abcde*\n- b\n* c\n<jaxihe@gmail.com><https://google.com>![http://image.com][your image]!v[https://www.youtube.com/embed/slNHuM4X-8M][500x400]"];
-        Parser *parser = [[Parser alloc] initWithDocument:doc];
-        [parser parse];
-        NSLog(@"%@", [parser render]);
+        NSDate *start = [NSDate date];
+        for (int i = 0; i < 10000; ++i) {
+            Document *doc = [[Document alloc] initWithContent:@"## Hello world\nHello world\n---\nHello World\n\nefgh\n\n1. *abcde*\n- b\n* c\n\n---\n<jaxihe@gmail.com><https://google.com>![http://image.com][your image]!v[https://www.youtube.com/embed/slNHuM4X-8M][500x400]"];
+            Parser *parser = [[Parser alloc] initWithDocument:doc];
+            [parser parse];
+            [parser render];
+            
+        }
+        NSTimeInterval timeInterval = [start timeIntervalSinceNow];
+        double seconds = fabs(timeInterval);
+        NSLog(@"%lf", seconds);
     }
-    
     return 0;
 }
 

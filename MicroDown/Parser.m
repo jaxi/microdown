@@ -114,20 +114,33 @@
 {
     if (_renderedString == nil) {
         NSInteger elementsCount = self.document.elements.count;
-        
+        NSInteger processorCount = [[NSProcessInfo processInfo] processorCount];
+//        NSLog(@"%d", (int)elementsCount);
         NSMutableArray *arrayOfRenderedString = [NSMutableArray arrayWithCapacity:elementsCount];
         for (int i = 0; i < elementsCount; ++i) {
-            [arrayOfRenderedString addObject:@"Object-1"];
+            [arrayOfRenderedString addObject:@""];
         }
         
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         dispatch_group_t group = dispatch_group_create();
         
-        for (NSInteger i = 0; i < elementsCount; ++ i) {
+        NSInteger dispatchingBlock = elementsCount < processorCount ?
+            elementsCount : (elementsCount / processorCount);
+        NSInteger startingElementIndex = 0;
+        
+        while (startingElementIndex < elementsCount) {
             dispatch_group_async(group, queue, ^{
-                arrayOfRenderedString[i] = [self.document.elements[i] toHTML];
+                // NSLog(@"%d", (int)startingElementIndex);
+                for (NSInteger i = startingElementIndex;
+                     i < elementsCount && i < startingElementIndex + dispatchingBlock;
+                     ++ i) {
+//                    NSLog(@"%d", (int)i);
+                    arrayOfRenderedString[i] = [self.document.elements[i] toHTML];
+                }
             });
+            startingElementIndex += dispatchingBlock;
         }
+        
         
         dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
 

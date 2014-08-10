@@ -115,7 +115,7 @@
     if (_renderedString == nil) {
         NSInteger elementsCount = self.document.elements.count;
         NSInteger processorCount = [[NSProcessInfo processInfo] processorCount];
-//        NSLog(@"%d", (int)elementsCount);
+
         NSMutableArray *arrayOfRenderedString = [NSMutableArray arrayWithCapacity:elementsCount];
         for (int i = 0; i < elementsCount; ++i) {
             [arrayOfRenderedString addObject:@""];
@@ -130,11 +130,11 @@
         
         while (startingElementIndex < elementsCount) {
             dispatch_group_async(group, queue, ^{
-                // NSLog(@"%d", (int)startingElementIndex);
+
                 for (NSInteger i = startingElementIndex;
                      i < elementsCount && i < startingElementIndex + dispatchingBlock;
                      ++ i) {
-//                    NSLog(@"%d", (int)i);
+
                     arrayOfRenderedString[i] = [self.document.elements[i] toHTML];
                 }
             });
